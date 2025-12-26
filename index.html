@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>第2版</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="game-container">
+  <div class="score-board">
+    <span id="hi-score">HI 00000</span>
+    <span id="score">00000</span>
+  </div>
+  
+  <div id="game-over" class="hidden">
+    <div class="go-text">GAME OVER</div>
+    <div class="restart-icon">↻</div>
+  </div>
+  
+  <div id="dino">
+    <svg class="dino-shape stand" viewBox="0 0 44 47">
+      <path d="M44 47V21h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2V0H20v2h-2v2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v2H0v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H18v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <rect x="26" y="2" width="2" height="2" fill="#fff"/>
+    </svg>
+    
+    <svg class="dino-shape run1 hidden" viewBox="0 0 44 47">
+      <path d="M44 47V21h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2V0H20v2h-2v2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v2H0v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H18v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <path d="M8 47v-4h2v4h-2zm4 0v-4h2v4h-2z" fill="#f7f7f7"/><path d="M6 43h2v2H6v-2zm4 0h2v2h-2v-2z" fill="#535353"/><rect x="26" y="2" width="2" height="2" fill="#fff"/>
+    </svg>
+
+    <svg class="dino-shape run2 hidden" viewBox="0 0 44 47">
+      <path d="M44 47V21h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2V0H20v2h-2v2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v2H0v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H18v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <path d="M22 47v-4h2v4h-2zm4 0v-4h2v4h-2z" fill="#f7f7f7"/><path d="M22 43h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#535353"/><rect x="26" y="2" width="2" height="2" fill="#fff"/>
+    </svg>
+
+    <svg class="dino-shape duck1 hidden" viewBox="0 0 59 47">
+      <path d="M59 47V31h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2v-2H29v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2H9v2H7v2H5v2H3v2H1v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H19v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <rect x="41" y="15" width="2" height="2" fill="#fff"/>
+      <path d="M7 47v-4h2v4H7zm4 0v-4h2v4h-2z" fill="#f7f7f7"/>
+      <path d="M5 43h2v2H5v-2zm4 0h2v2H9v-2z" fill="#535353"/>
+    </svg>
+
+    <svg class="dino-shape duck2 hidden" viewBox="0 0 59 47">
+      <path d="M59 47V31h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2v-2H29v2h-2v2h-2v2h-2v2h-2v2h-2v2h-2v2H9v2H7v2H5v2H3v2H1v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H19v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <rect x="41" y="15" width="2" height="2" fill="#fff"/>
+      <path d="M21 47v-4h2v4h-2zm4 0v-4h2v4h-2z" fill="#f7f7f7"/>
+      <path d="M21 43h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#535353"/>
+    </svg>
+    
+    <svg class="dino-shape dead hidden" viewBox="0 0 44 47">
+      <path d="M44 47V21h-2v-2h-2v-2h-2v-2h-2v-2h-2v-2h-2v-4h-2v-2h-2v-2h-2V0H20v2h-2v2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v2H0v12h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2h2v2h-2v2h-2v2H18v2h-2v2h-2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2v2z" fill="#535353"/>
+      <rect x="26" y="2" width="2" height="2" fill="#fff"/>
+      <path d="M22 27h2v2h-2zm4 2h2v2h-2z" fill="#535353"/></svg>
+  </div>
+
+  <div id="ground-line"></div>
+  <div id="obstacles"></div>
+  
+  <div class="moon hidden"></div>
+  <div class="star s1 hidden"></div>
+  <div class="star s2 hidden"></div>
+  <div class="cloud c1"></div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
